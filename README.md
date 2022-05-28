@@ -1,2 +1,2 @@
 # examFrontend
-frontend repo for my exam 2020
+frontend repo for my exam 2022
