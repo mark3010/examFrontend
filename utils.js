@@ -5,6 +5,7 @@
  * @param {str} str 
  * @returns the encode string
  */
+
  export function encode(str) {
     let encoded = "" + str
     encoded = encoded.replace(/&/g, "&amp;");
@@ -34,7 +35,7 @@
     document.getElementById("content").innerHTML = ""
     document.getElementById("content").appendChild(clon)
   }
-  
+
   const clickEvent = new MouseEvent("click", {
     view: window,
     bubbles: true,
@@ -44,5 +45,3 @@
   export function showPage(pageId) {
     document.getElementById(pageId).dispatchEvent(clickEvent)
   }
-  
-  

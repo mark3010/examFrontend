@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="./styles/style.css" rel="stylesheet">
-    <script src="./index.js" type="module"></script>
+    <script src="index.js" type="module"></script>
     <title>Document</title>
 </head>
+
 <body>
-    <div style="padding:1em;">
+    <div class="nav-bar" style="padding:1em;">
         <ul id="menu" class="menu">
-          <li><a id="page-about" href="#">Om Denne Opgave</a></li>
+          <li><a id="intro-page" href="#">About</a></li>
           <li><a id="page-candidates" href="#">Candidates</a></li>
           <li><a id="page-add-candidates" href="#">Add/Edit Candidates</a></li>
           <li><a id="page-parties" href="#">Parties</a></li>
@@ -20,23 +21,39 @@
       </div>
       <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
     </div>
-    
 </body>
 </html>
 
-<template data-id="page-about">
-    <h2>About</h2>
-  </template>
+<template data-id="intro-page">
+    <div class="intro">
+        <h2>Programming Exam project 2022</h2>
+        <p>this project was made by Mark Friis Larsen (mark025e@stud.kea.dk) in the span of a day</p>
+        <p>enjoy...</p>
+    </div>
 
-  <template data-id="page-candidates">
+</template>
+
+<template data-id="page-candidates">
     <h2>Candidates</h2>
-    <table class="table">
-        <thead>
-<tr><th>ID</th><th>Name</th><th>Party Letter</th></tr>
-        </thead>
-        <tbody id="tbl-body">
 
-        </tbody>
+    <table class="table">
+
+    <thead>
+        <tr><th>ID</th><th>Name</th><th>Party Letter</th></tr>
+    </thead>
+
+    <tbody id="tbl-body"></tbody>
 
     </table>
-  </template>
+
+</template>
+
+<template data-id="page-add-candidates">
+    <h2>Find a candidate</h2>
+    <form>
+        <label for="name-input">Id</label>
+        <input id="name-input" placeholder="Enter candidate id">
+        <button id="add-candidate-btn">Find Candidate</button>
+        <p id="userInformation"></p>
+    </form>
+</template>

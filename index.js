@@ -1,6 +1,7 @@
+
 import { renderTemplate, setActive, showPage } from "./utils.js"
 
-import {getCandidates} from "./js-for-pages/candidates.js"
+import {getCandidates,addCandidateHandler} from "./js-for-pages/candidates.js"
 
 function renderMenuItems(evt) {
   const element = evt.target
@@ -13,15 +14,11 @@ function renderMenuItems(evt) {
       getCandidates()
       break
     }
-    // case "page-add-candidates": {
-     
-    // }
+    case "page-add-candidates": {
+      addCandidateHandler()
+     }
   }
 }
 
 document.getElementById("menu").onclick = renderMenuItems;
-showPage("page-about") //Set the default page to render
-
-
-
-
+showPage("intro-page") //Set the default page to render
