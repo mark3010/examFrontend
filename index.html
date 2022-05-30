@@ -13,10 +13,10 @@
 <body>
     <div class="nav-bar" style="padding:1em;">
         <ul id="menu" class="menu">
-          <li><a id="intro-page" href="#">About</a></li>
-          <li><a id="page-candidates" href="#">Candidates</a></li>
-          <li><a id="page-add-candidates" href="#">Add/Edit Candidates</a></li>
-          <li><a id="page-parties" href="#">Parties</a></li>
+          <li><a id="page-about" href="#">About this project</a></li>
+          <li><a id="page-cyclists" href="#">Cyclists</a></li>
+          <li><a id="page-crud" href="#">Manipulate data</a></li>
+          <li><a id="page-jerseys" href="#">Jerseys</a></li>
         </ul>
       </div>
       <div id="content" style="margin-left:15px;padding-top: 1em;"></div>
@@ -24,22 +24,59 @@
 </body>
 </html>
 
-<template data-id="intro-page">
+<template data-id="page-about">
     <div class="intro">
-        <h2>Programming Exam project 2022</h2>
-        <p>this project was made by Mark Friis Larsen (mark025e@stud.kea.dk) in the span of a day</p>
+        <h1 style="margin-bottom: 40px">Programming Exam project 2022</h1>
+        <p>This project was made by Mark Friis Larsen (mark025e@stud.kea.dk) in the span of a day.</p>
+        <p>The page is a fullstack project that is meant to map tour de france cyclists and teams, to a usable ui</p>
+        <p>this page supports full crud implementation of cyclists, and a display of jersey winners</p>
         <p>enjoy...</p>
     </div>
 
 </template>
 
-<template data-id="page-candidates">
-    <h2>Candidates</h2>
+<template data-id="page-jerseys">
+    <div class="center">
+        <h1>Winners</h1>
+        <hr>
+        <h2>Yellow Jersey</h2>
+        <p id="userInformation-jersey-yellow"></p>
+        <p style="color: lightslategray">The cyclist with the fastest time overall</p>
+
+        <hr>
+        <h2>Mountain Jersey</h2>
+        <p id="userInformation-jersey-mountain"></p>
+        <p style="color: lightslategray">The cyclist with the most amount of mountain points</p>
+
+        <hr>
+        <h2>Green Jersey</h2>
+        <p id="userInformation-jersey-green"></p>
+        <p style="color: lightslategray">the cyclist with the most amount of sprint points</p>
+
+        <hr>
+        <h2>White Jersey</h2>
+        <p id="userInformation-jersey-white"></p>
+        <p style="color: lightslategray">the cyclist with the fastest time under the age of 26</p>
+        <hr>
+    </div>
+
+</template>
+
+<template data-id="page-cyclists">
+
+    <div class="center">
+        <h2>sort by team name</h2>
+        <label for="teamName-input-sort">Team</label>
+        <input id="teamName-input-sort" placeholder="Enter team name">
+        <button id="team-btn-sort">Sort</button>
+    </div>
+
+    <h2 class="center" style="margin-top: 30px">Cyclists</h2>
 
     <table class="table">
 
     <thead>
-        <tr><th>ID</th><th>Name</th><th>Party Letter</th></tr>
+        <tr><th>Id</th><th>Name</th><th>Time total</th> <th>Mountain points</th> <th>Sprint Points</th><th>Team</th></tr>
     </thead>
 
     <tbody id="tbl-body"></tbody>
@@ -48,12 +85,66 @@
 
 </template>
 
-<template data-id="page-add-candidates">
-    <h2>Find a candidate</h2>
-    <form>
-        <label for="name-input">Id</label>
-        <input id="name-input" placeholder="Enter candidate id">
-        <button id="add-candidate-btn">Find Candidate</button>
-        <p id="userInformation"></p>
-    </form>
+<template data-id="page-crud">
+    <div class="crud">
+        <div class="form">
+            <h2>Add a cyclist</h2>
+            <label for="name-input-add">Name</label>
+            <input id="name-input-add" placeholder="Enter cyclist name">
+
+            <label for="teamId-input-add">Team</label>
+            <input id="teamId-input-add" placeholder="Enter team name">
+
+            <label for="age-input-add">Age</label>
+            <input id="age-input-add" placeholder="Enter cyclist age">
+
+            <label for="timeTotal-input-add">Time total</label>
+            <input id="timeTotal-input-add" placeholder="Enter total time in seconds">
+
+            <label for="sprintPoints-input-add">Sprint points</label>
+            <input id="sprintPoints-input-add" placeholder="Enter points">
+
+            <label for="mountainPoints-input-add">Mountain points</label>
+            <input id="mountainPoints-input-add" placeholder="Enter points">
+
+            <button id="cyclist-btn-add">Add</button>
+            <p id="userInformation-add"></p>
+        </div>
+
+        <div class="form">
+
+            <h2>Edit a cyclist</h2>
+            <label for="id-input-edit">Id</label>
+            <input id="id-input-edit" placeholder="Enter cyclist id">
+
+            <label for="name-input-edit">Name</label>
+            <input id="name-input-edit" placeholder="Enter cyclist name">
+
+            <label for="teamId-input-edit">Team</label>
+            <input id="teamId-input-edit" placeholder="Enter team name">
+
+            <label for="age-input-edit">Age</label>
+            <input id="age-input-edit" placeholder="Enter cyclist age">
+
+            <label for="timeTotal-input-edit">Time total</label>
+            <input id="timeTotal-input-edit" placeholder="Enter total time in seconds">
+
+            <label for="sprintPoints-input-edit">Sprint points</label>
+            <input id="sprintPoints-input-edit" placeholder="Enter points">
+
+            <label for="mountainPoints-input-edit">Mountain points</label>
+            <input id="mountainPoints-input-edit" placeholder="Enter points">
+
+            <button id="cyclist-btn-edit">save</button>
+            <p id="userInformation-edit"></p>
+        </div>
+
+        <div class="form">
+            <h2>Delete a cyclist</h2>
+            <label for="id-input-delete">Id</label>
+            <input id="id-input-delete" placeholder="Enter cyclist id">
+            <button id="cyclist-btn-delete">Delete</button>
+            <p id="userInformation-delete"></p>
+        </div>
+    </div>
 </template>

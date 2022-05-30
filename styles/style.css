@@ -32,3 +32,19 @@ ul li {
     border-radius: 3px;
     text-align: center;
 }
+
+.crud {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.center {
+    text-align: center;
+}

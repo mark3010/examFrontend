@@ -1,24 +1,31 @@
 
 import { renderTemplate, setActive, showPage } from "./utils.js"
 
-import {getCandidates,addCandidateHandler} from "./js-for-pages/candidates.js"
+import {CyclistHandler, CrudHandler, getJerseyWinners, getCyclists} from "./js-for-pages/cyclists.js"
 
 function renderMenuItems(evt) {
   const element = evt.target
   setActive(element)
   const id = element.id;
-  renderTemplate(id)  //This setups the HTML for the page
+  renderTemplate(id)
   switch (id) {
-    //Here you can execute JavaScript for the selected page
-    case "page-candidates": {
-      getCandidates()
+    //execute js for each page
+    case "page-cyclists": {
+      CyclistHandler()
+      getCyclists() //calling once seperately from cyclistHandler to refresh page
       break
     }
-    case "page-add-candidates": {
-      addCandidateHandler()
+    case "page-crud": {
+      CrudHandler()
+      break
      }
+    case "page-jerseys": {
+      getJerseyWinners()
+
+    }
   }
 }
 
 document.getElementById("menu").onclick = renderMenuItems;
-showPage("intro-page") //Set the default page to render
+
+showPage("page-about")
